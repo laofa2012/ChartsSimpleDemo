@@ -14,9 +14,6 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) IBOutlet LineChartView *lineChart;
-@property (nonatomic, strong) ChartYAxis *leftAxis;
-@property (nonatomic, strong) ChartYAxis *rightAxis;
-@property (nonatomic, strong) ChartXAxis *xAxis;
 
 @end
 
@@ -33,22 +30,19 @@
     [self.lineChart setScaleEnabled:NO];
     self.lineChart.pinchZoomEnabled = YES;
     self.lineChart.drawGridBackgroundEnabled = NO;
-    
-    // 存一些方便使用的重要属性
-    self.leftAxis = self.lineChart.leftAxis;
-    self.rightAxis = self.lineChart.rightAxis;
-    self.xAxis = self.lineChart.xAxis;
+    self.lineChart.noDataText = @"没有数据";
+    self.lineChart.noDataFont = [UIFont systemFontOfSize:14];
 
-    //显示边界
+    // 显示边界
     self.lineChart.drawBordersEnabled = YES;
 
     // X轴设置
-    self.xAxis.labelPosition = XAxisLabelPositionBottom;
-    self.xAxis.labelCount = 7;
-    self.xAxis.valueFormatter = [[DateValueFormatter alloc] init];
+    self.lineChart.xAxis.labelPosition = XAxisLabelPositionBottom;
+    self.lineChart.xAxis.labelCount = 7;
+    self.lineChart.xAxis.valueFormatter = [[DateValueFormatter alloc] init];
     
     // 设置最大与最小值
-    [self setYAxis:6 max:60.0f min:-40.0f];
+    [self setYAxisCount:6 max:60.0f min:-40.0f];
     
     // 启动定时器刷新图表
     [self setDataCount:8 range:50];
@@ -58,15 +52,15 @@
 }
 
 // 左右线设置一样
-- (void)setYAxis:(NSInteger)count max:(float)max min:(float)min
+- (void)setYAxisCount:(NSInteger)count max:(float)max min:(float)min
 {
-    self.leftAxis.axisMinimum = min;
-    self.leftAxis.axisMaximum = max;
-    self.leftAxis.labelCount = count;
+    self.lineChart.leftAxis.axisMinimum = min;
+    self.lineChart.leftAxis.axisMaximum = max;
+    self.lineChart.leftAxis.labelCount = count;
     
-    self.rightAxis.axisMinimum = min;
-    self.rightAxis.axisMaximum = max;
-    self.rightAxis.labelCount = count;
+    self.lineChart.rightAxis.axisMinimum = min;
+    self.lineChart.rightAxis.axisMaximum = max;
+    self.lineChart.rightAxis.labelCount = count;
 }
 
 - (void)setDataCount:(int)count range:(double)range
