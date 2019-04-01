@@ -17,7 +17,6 @@
 @property (nonatomic, strong) ChartYAxis *leftAxis;
 @property (nonatomic, strong) ChartYAxis *rightAxis;
 @property (nonatomic, strong) ChartXAxis *xAxis;
-@property (nonatomic, strong) NSMutableArray *chartsValues;
 
 @end
 
