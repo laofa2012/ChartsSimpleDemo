@@ -1,11 +1,11 @@
 # ChartsSimpleDemo
 
-基于Charts库的一个最简单的Demo。
-Charts库给的Demo比较全，我只整理了一个比较常用的，以最精简方式使用。
-假如了CocoaPods框架，用了OC与Swift混合编译。
-假如您的项目也需要相同的功能，可以直接拿去用。
+基于Charts库的一个最简单的Demo。<br>  
+Charts库给的Demo比较全，我只整理了一个比较常用的，以最精简方式使用。<br>  
+假如了CocoaPods框架，用了OC与Swift混合编译。<br>  
+假如您的项目也需要相同的功能，可以直接拿去用。<br>  
 
-<img src="https://github.com/laofa2012/ChartsSimpleDemo/blob/master/ReadMeResource/charts_simple_guide.png" width="375" alt="截图" />
+<img src="https://github.com/laofa2012/ChartsSimpleDemo/blob/master/ReadMeResource/charts_simple_demo_guide.png" width="375" alt="截图" />
 
 ## 此例子针对OC调用Charts库做的例子：
 
