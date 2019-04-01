@@ -16,7 +16,7 @@ Charts库给的Demo比较全，我只整理了一个比较常用的，以最精�
 5. 接着系统会帮你创建一个默认文件，不能编辑：'product_name-Swift.h'，oc调用swift需要导入此文件
 6. 注意，这里有两个问题需要重视：
     * 假如导入后系统提示找不到文件，在'Build Settings'输入'-swift'寻找真正文件名，空格与横杠系统会帮你替换为下划线；
-    * 必须保<font color=#ff0000>证项目中有swift文件</font>，pod框架中的不算在内，否则找不到该文件；
+    * 必须保证`项目中有swift文件`，pod框架中的不算在内，否则找不到该文件；
 7. 假如swift文件需要用oc内容，只需要在'product_name-Bridging-Header.h'导入就行了；
 8. 以此项目为例，#import "ChartsDemo-Swift.h"，还不能使用pod框架中的库，必须@import Charts，此项目我写在了'DateValueFormatter.h'中了；
 
