@@ -2,5 +2,5 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'ChartsDemo' do
-    pod 'Charts'
+    pod 'Charts', '~> 3.2.2'
 end
