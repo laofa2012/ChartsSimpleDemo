@@ -8,8 +8,7 @@
 
 #import "ViewController.h"
 #import "DateValueFormatter.h"
-#import "ChartsDemo-Swift.h"
-@import Charts;
+#import "LineFillFormatter.h"
 
 @interface ViewController ()
 
@@ -45,9 +44,9 @@
     [self setYAxisCount:6 max:60.0f min:-40.0f];
     
     // 启动定时器刷新图表
-    [self setDataCount:8 range:50];
+    [self setDataCount:8];
     [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        [self setDataCount:8 range:50];
+        [self setDataCount:8];
     }];
 }
 
@@ -63,13 +62,16 @@
     self.lineChart.rightAxis.labelCount = count;
 }
 
-- (void)setDataCount:(int)count range:(double)range
+- (void)setDataCount:(int)count
 {
-    // 测试数据，传入n个，取值range的随机数
+    float min = self.lineChart.leftAxis.axisMinimum;
+    float max = self.lineChart.leftAxis.axisMaximum;
+    
+    // 测试数据，传入n个，取随机数
     NSMutableArray *values = [[NSMutableArray alloc] init];
     for (int i = 0; i < count; i++)
     {
-        double val = arc4random_uniform(range);
+        double val = arc4random_uniform((max - min) * 1000) / 1000.0f + min;
         [values addObject:[[ChartDataEntry alloc] initWithX:i y:val icon:nil]];
     }
     
@@ -111,6 +113,7 @@
         CGGradientRef gradient = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
         set1.fillAlpha = 0.6;
         set1.fill = [ChartFill fillWithLinearGradient:gradient angle:90.f];
+        set1.fillFormatter = [[LineFillFormatter alloc] initWithMinValue:min];
         set1.drawFilledEnabled = YES;
         CGGradientRelease(gradient);
         

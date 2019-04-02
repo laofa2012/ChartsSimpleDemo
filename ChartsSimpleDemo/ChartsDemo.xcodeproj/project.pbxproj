@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1943A7BB874C38F1F15984A3 /* Pods_ChartsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F22F52EA3D1A61CFB83004D /* Pods_ChartsDemo.framework */; };
+		6EA0177A2253D9B00009CD30 /* LineFillFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA017782253D9B00009CD30 /* LineFillFormatter.m */; };
 		6EA7575F224E0B7800011E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA7575E224E0B7800011E2D /* AppDelegate.m */; };
 		6EA75762224E0B7800011E2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA75761224E0B7800011E2D /* ViewController.m */; };
 		6EA75765224E0B7800011E2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA75763224E0B7800011E2D /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		1F22F52EA3D1A61CFB83004D /* Pods_ChartsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChartsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3FA9BFC66591440A43244E /* Pods-ChartsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChartsDemo.release.xcconfig"; path = "Target Support Files/Pods-ChartsDemo/Pods-ChartsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6EA017782253D9B00009CD30 /* LineFillFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineFillFormatter.m; sourceTree = "<group>"; };
+		6EA017792253D9B00009CD30 /* LineFillFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineFillFormatter.h; sourceTree = "<group>"; };
 		6EA7575A224E0B7800011E2D /* ChartsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EA7575D224E0B7800011E2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6EA7575E224E0B7800011E2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +54,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EA0177B2253D9BB0009CD30 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				6EA757A92251ACFB00011E2D /* DateValueFormatter.h */,
+				6EA757A82251ACFA00011E2D /* DateValueFormatter.m */,
+				6EA017792253D9B00009CD30 /* LineFillFormatter.h */,
+				6EA017782253D9B00009CD30 /* LineFillFormatter.m */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
 		6EA75751224E0B7800011E2D = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +86,11 @@
 		6EA7575C224E0B7800011E2D /* ChartsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6EA0177B2253D9BB0009CD30 /* Formatter */,
 				6EA7575D224E0B7800011E2D /* AppDelegate.h */,
 				6EA7575E224E0B7800011E2D /* AppDelegate.m */,
 				6EA75760224E0B7800011E2D /* ViewController.h */,
 				6EA75761224E0B7800011E2D /* ViewController.m */,
-				6EA757A92251ACFB00011E2D /* DateValueFormatter.h */,
-				6EA757A82251ACFA00011E2D /* DateValueFormatter.m */,
 				6EA75773224E0F6500011E2D /* SupportFiles */,
 			);
 			path = ChartsDemo;
@@ -236,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EA75762224E0B7800011E2D /* ViewController.m in Sources */,
+				6EA0177A2253D9B00009CD30 /* LineFillFormatter.m in Sources */,
 				6EA757AA2251ACFB00011E2D /* DateValueFormatter.m in Sources */,
 				6EA7576D224E0B7A00011E2D /* main.m in Sources */,
 				6EA7575F224E0B7800011E2D /* AppDelegate.m in Sources */,
